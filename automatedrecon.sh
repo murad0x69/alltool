@@ -129,14 +129,14 @@ echo -e "${CYAN}Navigate to https://YourVpsIP:9090/navigator  # Access Cockpit N
 
 echo -e "${CYAN}#### Install and Configure RDP:${NC}"
 echo -e "${CYAN}sudo apt install xrdp -y                    # Install xrdp for RDP functionality${NC}"
-echo -e "${CYAN}sudo adduser ibrahim                        # Add a new user 'ibrahim'${NC}"
-echo -e "${CYAN}sudo usermod -aG ssl-cert ibrahim           # Add user to ssl-cert group${NC}"
-echo -e "${CYAN}sudo usermod -aG adm ibrahim                # Add user to adm group${NC}"
-echo -e "${CYAN}sudo usermod -aG www-data ibrahim           # Add user to www-data group${NC}"
-echo -e "${CYAN}sudo usermod -aG sudo ibrahim               # Add user to sudo group${NC}"
-echo -e "${CYAN}sudo usermod -aG root ibrahim               # Add user to root group${NC}"
-echo -e "${CYAN}sudo usermod -aG systemd-journal ibrahim    # Add user to systemd-journal group${NC}"
-echo -e "${CYAN}sudo usermod -aG users ibrahim              # Add user to users group${NC}\n"
+echo -e "${CYAN}sudo adduser max                        # Add a new user 'max'${NC}"
+echo -e "${CYAN}sudo usermod -aG ssl-cert max           # Add user to ssl-cert group${NC}"
+echo -e "${CYAN}sudo usermod -aG adm max                # Add user to adm group${NC}"
+echo -e "${CYAN}sudo usermod -aG www-data max           # Add user to www-data group${NC}"
+echo -e "${CYAN}sudo usermod -aG sudo max               # Add user to sudo group${NC}"
+echo -e "${CYAN}sudo usermod -aG root max               # Add user to root group${NC}"
+echo -e "${CYAN}sudo usermod -aG systemd-journal max    # Add user to systemd-journal group${NC}"
+echo -e "${CYAN}sudo usermod -aG users max              # Add user to users group${NC}\n"
 
 echo -e "${CYAN}#### Configure Firewall for RDP and SSH:${NC}"
 echo -e "${CYAN}sudo ufw allow 3389/tcp                     # Allow RDP${NC}"
@@ -509,7 +509,7 @@ echo -e "${BOLD_BLUE}|                                                          
 echo -e "${BOLD_BLUE}|  Alongside the xss-checker tool, you'll also need two wordlists and a Python reflection    |${NC}"
 echo -e "${BOLD_BLUE}|  detection tool. All of these can be found in any of the XSS plans available on the site.  |${NC}"
 echo -e "${BOLD_BLUE}|                                                                                           |${NC}"
-echo -e "${BOLD_BLUE}|  You can get them by visiting: https://ibrahimxss.store/ and purchasing any plan that      |${NC}"
+echo -e "${BOLD_BLUE}|  You can get them by visiting: https://maxxss.store/ and purchasing any plan that      |${NC}"
 echo -e "${BOLD_BLUE}|  fits your needs.                                                                         |${NC}"
 echo -e "${BOLD_BLUE}|                                                                                           |${NC}"
 echo -e "${BOLD_BLUE}|  If you already have a plan, simply copy the xss-checker tool, the wordlists, and the      |${NC}"
@@ -518,7 +518,7 @@ echo -e "${BOLD_BLUE}|                                                          
 echo -e "${BOLD_BLUE}|  Alternatively, if you don't have a plan or the tools, you can use the PRO plan for free   |${NC}"
 echo -e "${BOLD_BLUE}|  for 5 days each month from the 10th to the 15th.                                         |${NC}"
 echo -e "${BOLD_BLUE}|                                                                                           |${NC}"
-echo -e "${BOLD_BLUE}|  The release of the key is posted on the homepage banner at ibrahimxss.store, but this     |${NC}"
+echo -e "${BOLD_BLUE}|  The release of the key is posted on the homepage banner at maxxss.store, but this     |${NC}"
 echo -e "${BOLD_BLUE}|  option is only available for those who have not yet tested the tool.                      |${NC}"
 echo -e "${BOLD_BLUE}|                                                                                           |${NC}"
 echo -e "${BOLD_BLUE}=============================================================================================${NC}"
@@ -1078,13 +1078,13 @@ run_step_8() {
         if [ ! -f "xss-checker" ]; then
             echo -e "${RED}The xss0r Tool is not present in the current directory.${NC}"
             echo -e "${CYAN}Please ensure the xss0r tool is placed in the directory and run the script again.${NC}"
-            echo -e "${BOLD_WHITE}Alternatively, you can download or purchase the tool from ibrahimxss.store.${NC}"
+            echo -e "${BOLD_WHITE}Alternatively, you can download or purchase the tool from maxxss.store.${NC}"
             echo -e "${BOLD_WHITE}After obtaining the tool, execute the xss-checker to enter your API key, and then proceed with the xss0rRecon tool.${NC}"
         fi
         
         # Check if xss-urls.txt file is missing
         if [ ! -f "xss-urls.txt" ]; then
-            echo -e "${RED}The xss-urls.txt file is not present in the current directory. Please make sure the file is generated or placed in the directory and try again. Alternatively, you can download or purchase the tool from ibrahimxss.store. After obtaining the tool, execute the xss-checker to enter your API key, and then proceed with the xss0rRecon tool.${NC}"
+            echo -e "${RED}The xss-urls.txt file is not present in the current directory. Please make sure the file is generated or placed in the directory and try again. Alternatively, you can download or purchase the tool from maxxss.store. After obtaining the tool, execute the xss-checker to enter your API key, and then proceed with the xss0rRecon tool.${NC}"
         fi
     fi
 }
@@ -1203,21 +1203,21 @@ run_path_based_xss() {
         echo -e "${RED}Error: path-xss.txt was not generated! Please check the Python script.${NC}"
     fi
 
-    # Step 10: Processing the URLs to replace 'ibrahimXSS' with '{payload}'
-    show_progress "Processing URLs in path-xss.txt to replace 'ibrahimXSS' with '{payload}'..."
+    # Step 10: Processing the URLs to replace 'maxXSS' with '{payload}'
+    show_progress "Processing URLs in path-xss.txt to replace 'maxXSS' with '{payload}'..."
 
     # Input file (path-xss.txt) and output file (path-xss-urls.txt)
     input_file="path-xss.txt"
     output_file="path-xss-urls.txt"
 
-    # Function to process and replace 'ibrahimXSS' with '{payload}'
+    # Function to process and replace 'maxXSS' with '{payload}'
     process_urls() {
         # Clear the output file if it exists
           > "$output_file"
 
         while read -r url; do
-            # Replace 'ibrahimXSS' with '{payload}' for each URL individually
-            processed_url=$(echo "$url" | sudo sed 's/ibrahimXSS/{payload}/g')
+            # Replace 'maxXSS' with '{payload}' for each URL individually
+            processed_url=$(echo "$url" | sudo sed 's/maxXSS/{payload}/g')
 
             # Save each processed URL to the output file
             echo "$processed_url" | sudo tee -a "$output_file" > /dev/null
